@@ -17,10 +17,21 @@
 </div>
 
 @code{
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        Console.WriteLine($"{nameof(MainLayout)} - { nameof(SetParametersAsync)}");
+        await base.SetParametersAsync(parameters);
+        await Task.Delay(1000);
+    }
 
     protected override Task OnParametersSetAsync()
     {
-        Console.WriteLine(nameof(OnParametersSetAsync));
+        Console.WriteLine($"{nameof(MainLayout)} - { nameof(OnParametersSetAsync)}");
         return base.OnParametersSetAsync();
+    }
+    protected override Task OnInitializedAsync()
+    {
+        Console.WriteLine($"{nameof(MainLayout)} - { nameof(OnInitializedAsync)}");
+        return base.OnInitializedAsync();
     }
 }
