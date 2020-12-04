@@ -15,3 +15,12 @@
         </div>
     </div>
 </div>
+
+@code{
+
+    protected override Task OnParametersSetAsync()
+    {
+        Console.WriteLine(nameof(OnParametersSetAsync));
+        return base.OnParametersSetAsync();
+    }
+}
