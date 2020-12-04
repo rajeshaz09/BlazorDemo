@@ -21,7 +21,6 @@
     {
         Console.WriteLine($"{nameof(MainLayout)} - { nameof(SetParametersAsync)}");
         await base.SetParametersAsync(parameters);
-        await Task.Delay(1000);
     }
 
     protected override Task OnParametersSetAsync()
